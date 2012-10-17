@@ -2,7 +2,7 @@ source 'http://rubygems.org'
 
 gem 'sinatra'
 gem 'sinatra-assetpack', :require => 'sinatra/assetpack'
-gem 'sinatra-ember', :require => 'sinatra/ember'
+gem 'sinatra-ember', :git => 'https://github.com/gamepoet/sinatra-ember', :require => 'sinatra/ember'
 gem 'rack-flash'
 gem 'sass'
 gem 'thin'

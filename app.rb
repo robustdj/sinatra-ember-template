@@ -8,6 +8,10 @@ class App < Sinatra::Base
 
   enable :sessions
 
+  ember {
+    templates '/javascripts/templates.js', ['/javascripts/app/templates/**/*.handlebars'], :relative_to => '/javascripts/app/templates'
+  }
+
   assets {
     serve '/javascripts', :from => '/javascripts'
 
@@ -26,7 +30,7 @@ class App < Sinatra::Base
       '/javascripts/app/mixins/**/*.js',
       '/javascripts/app/models/**/*.js',
       '/javascripts/app/controllers/*.js',
-      '/javascripts/app/templates/*.handlebars',
+      '/javascripts/templates.js',
       '/javascripts/app/views/*.js',
       '/javascripts/app/router.js',
     ]
@@ -37,10 +41,6 @@ class App < Sinatra::Base
     ]
 
     css_compression :sass       # Optional
-  }
-
-  ember {
-    templates '/javascripts/templates.js', ['javascripts/app/templates/**/*.handlebars']
   }
 
 
